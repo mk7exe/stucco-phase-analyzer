@@ -1,11 +1,8 @@
 import sys
-from PyQt5 import QtWidgets as qtw
-from PyQt5 import QtCore as qtc
-from PyQt5 import QtGui as qtg
-
 from DataEntry import *
 from Compute import *
 from utils import *
+
 
 class MyGroupBox(qtw.QWidget):
     def __init__(self):
@@ -38,6 +35,7 @@ class MyGroupBox(qtw.QWidget):
 
         self.layout().addWidget(messages)
         self.layout().addWidget(buttons)
+
 
 class MainWindow(qtw.QMainWindow):
 
@@ -141,6 +139,7 @@ class MainWindow(qtw.QMainWindow):
         fileopen = qtw.QFileDialog.getSaveFileName(self, "Save File", filter="Excel files (*.xlsx *.xls)")
         filename = fileopen[0]
         save_excel(filename, self.phases)
+
 
 if __name__ == '__main__':
     app = qtw.QApplication(sys.argv)

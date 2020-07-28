@@ -5,7 +5,7 @@ python_dir = os.path.dirname(sys.executable)  # directory of your python install
 
 include_files = [os.path.join(python_dir, "python3.dll"), os.path.join(python_dir, "vcruntime140.dll"), 'autorun.inf']
 build_exe_options = {"packages": ["os"],
-                     "includes": ["PyQt5"],
+                     "includes": ["PyQt5", "six", "scipy", "openpyxl"],
                      "include_files": include_files,
                      "excludes": ["tkinter"]}
 base = None
@@ -17,4 +17,5 @@ setup(name='Stucco Phase Analyzer',
       version=1.0,
       description='Program to calculate stucco phase content from weigh gain and loss measurements',
       options={'build_exe': build_exe_options},
+      requires=['numpy', 'PyQt5', 'openpyxl', 'numpy', 'scipy'],
       executables=[Executable('main.py', base=base)])

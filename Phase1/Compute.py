@@ -1,8 +1,6 @@
-import sys
 import numpy as np
 from PyQt5 import QtWidgets as qtw
 from PyQt5 import QtCore as qtc
-from PyQt5 import QtGui as qtg
 
 
 class ReadOnlyDelegate(qtw.QStyledItemDelegate):
@@ -80,7 +78,7 @@ class ComputeWin(qtw.QMainWindow):
             if len(phases[p]) > l:
                 l = len(phases[p])
 
-        height = l*40 + 40
+        height = l*50 + 40
         if height > 800:
             height = 800
 
