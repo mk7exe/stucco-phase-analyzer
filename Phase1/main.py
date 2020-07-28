@@ -73,6 +73,7 @@ class MainWindow(qtw.QMainWindow):
         exitAction.triggered.connect(lambda: self.close())
 
         self.fileMenu.addAction(importAction)
+        self.fileMenu.addAction(exportAction)
         self.fileMenu.addAction(exitAction)
 
         # layout
